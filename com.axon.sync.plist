@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Daily full sync at 10:00: Vendor Central, then WooCommerce, then Seller.
+     If the Mac is asleep at 10:00, macOS runs it when the Mac wakes.
+     caffeinate keeps the Mac awake only while the sync is running. -->
+<plist version="1.0">
+<dict>
+    <key>Label</key><string>com.axon.sync</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/caffeinate</string>
+        <string>-i</string>
+        <string>/Library/Frameworks/Python.framework/Versions/3.10/bin/python3</string>
+        <string>-u</string>
+        <string>sync.py</string>
+    </array>
+    <key>WorkingDirectory</key><string>/Users/yjeez/Documents/sp_api</string>
+    <key>StartCalendarInterval</key>
+    <dict><key>Hour</key><integer>10</integer><key>Minute</key><integer>0</integer></dict>
+    <key>StandardOutPath</key><string>/Users/yjeez/Documents/sp_api/logs/sync.log</string>
+    <key>StandardErrorPath</key><string>/Users/yjeez/Documents/sp_api/logs/sync.log</string>
+</dict>
+</plist>

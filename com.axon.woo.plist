@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Extra WooCommerce refreshes during the working day (13:00, 16:00, 19:00).
+     Takes a few seconds; the 10:00 full sync covers the morning. -->
+<plist version="1.0">
+<dict>
+    <key>Label</key><string>com.axon.woo</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Library/Frameworks/Python.framework/Versions/3.10/bin/python3</string>
+        <string>-u</string>
+        <string>sync.py</string>
+        <string>--only</string>
+        <string>woo</string>
+    </array>
+    <key>WorkingDirectory</key><string>/Users/yjeez/Documents/sp_api</string>
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict><key>Hour</key><integer>13</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>16</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>19</integer><key>Minute</key><integer>0</integer></dict>
+    </array>
+    <key>StandardOutPath</key><string>/Users/yjeez/Documents/sp_api/logs/woo.log</string>
+    <key>StandardErrorPath</key><string>/Users/yjeez/Documents/sp_api/logs/woo.log</string>
+</dict>
+</plist>

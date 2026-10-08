@@ -1,0 +1,27 @@
+# --- Secrets: never commit -------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# --- Amazon and business data: stays on the machine that runs the sync ------
+# (SP-API data protection: Amazon data lives only in the local database.)
+raw/
+logs/
+*.dump
+*.backup
+*.xlsx
+*.xls
+*.xlsm
+ad_spend.csv
+vendor_sales_raw.json
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- OS clutter -------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
